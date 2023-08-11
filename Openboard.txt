@@ -1,0 +1,30 @@
+Openboard is a tool on which we draw graphics
+
+Task 1 -: UI structuring (HTML + CSS) & Total functionalities
+          Canvas --> Intro and Basic graphics
+
+
+
+Socket.io to achieve real time communication. Realtime Dataflow via sockets .
+Changes made in folder structure -> transfer all frontend files inside public folder.
+                                    Make app.js for server part.(outside public folder.)
+JS library is Socket.io-- >> 1. first we will make a server using express   -> npm init (enter)
+                                install npm i socket.io and npm install express
+                                server initialize and listen and start(by node app.js on terminal)
+                                To run socket.io in frontend -> search socketio cdn, and copy script tag from client installation setInterval
+                                And paste in index.html just below canvas tag
+                                To connect frontend with server -> write 1 more script tag -> let socket = io.connect("http://localhost:8080", {transports: ['websocket']});
+                                So now we open any number of localhost of 8080 it connects with backend
+                                
+
+
+
+
+To HOST-:
+
+1. sign up on github and heroku
+2. create new repo
+3. if ant=y changed perform here on code change it as well on git repo so changes are done there also by writing on terminal-:
+   git add .
+   git commit -m "update"
+   git push

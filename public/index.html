@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="icon" href="./icons/favicon.ico" type="image/x-icon" />
+
+    <!-- linking website icon by searhing link favicon  ico -->
+     <link rel="stylesheet" href="./OB_style.css">
+    <title>Online Openboard</title>
+</head>
+<body>
+    <!-- icon -> to open and close tools -->
+    <div class="options-cont">
+        <!-- just copy this wholei tag from font aweome site -->
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <!-- scale-tools added for animation stuff check .css -->
+    <div class="tools-cont scale-tools">
+        <i class="fa-solid fa-pencil"></i>
+        <i class="fa-solid fa-eraser"></i>
+        <i class="fa-solid fa-download"></i>
+        <i class="fa-solid fa-upload"></i>
+        <i class="sticky fa-solid fa-clipboard"></i>
+        <i class="fa-solid fa-rotate-right"></i>
+        <i class="fa-solid fa-rotate-left"></i>
+    </div>
+
+    <div class="pencil-tool">
+        <div class="pencil-width-cont">
+            <!-- input of slider range, by defult value is set to be 3 -->
+            <input type="range" min="2" max="10" value="3" class="pencil-width">
+        </div>
+        <div class="pencil-color-cont">
+            <div class="pencil-color black"></div>
+            <div class="pencil-color red"></div>
+            <div class="pencil-color blue"></div>
+        </div>
+    </div>
+
+    <div class="eraser-tool-cont">
+        <input type="range" min="2" max="40" value="3" class="eraser-width">
+    </div>
+
+    <!-- <div class="sticky-cont">
+    </div> -->
+    <!-- canvas is a html element used to perform graphics (2D Graphics), 
+    it is provided by Browser API -->
+    <canvas></canvas>
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" 
+    integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+    <script>
+        let socket = io.connect("http://localhost:8080", {transports: ['websocket']});
+    </script>
+
+    <!-- socket.io cdn script to connect through frontend with backend -->
+    <!-- got this methid access by above scriptlibrary, first system has to connect with this url, to backend through frontend by this url  -->
+    <script src="./OB_script.js"></script>
+    <script src="./canvas.js"></script>
+</body>
+</html>
